@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -93,21 +93,28 @@
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1138,1385" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1138,1742" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:DateTime" Name="endTime" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome UI Popup Test Page(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1362" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="96565a7d-e7b4-4504-9b1a-449232dcc267" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome UI Popup Test Page(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,1696" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="96565a7d-e7b4-4504-9b1a-449232dcc267" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1168" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,1525" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="uiPopupResult" />
             </Sequence.Variables>
@@ -116,34 +123,56 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="[TimeSpan.ParseExact(&quot;00:00:01&quot;, &quot;hh\:mm\:ss&quot;, System.Globalization.CultureInfo.InvariantCulture).TotalSeconds]" DisplayName="Click 'Open UI Modal'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="[TimeSpan.ParseExact(&quot;00:00:01&quot;, &quot;hh\:mm\:ss&quot;, System.Globalization.CultureInfo.InvariantCulture).TotalSeconds]" DisplayName="Click 'Open UI Modal'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="127.0.0.1/index.html" ContentHash="g26MuXbJiE-ShNWjfB2lIQ" DesignTimeRectangle="79, 327, 158, 46" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" Guid="469cfbdc-5345-4637-af52-5f47d7c13282" InformativeScreenshot="d942f0cf3c78c1678e476be764afd938.jpg" Reference="DVdlk3iFrkCiJNQSjEa6TQ/yqKoYNdmlU-z2jPeIAijRw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UI Popup Test Page' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClosePopup PopupException="{x:Null}" PopupHandled="{x:Null}" DisplayName="Close Popup" sap:VirtualizedContainerService.HintSize="452,191" sap2010:WorkflowViewState.IdRef="NClosePopup_3" PopupAppearTimeout="3" PreferredButtons="[New String(){&quot;Close&quot;,&quot;Cancel&quot;,&quot;Ok&quot;,&quot;OK&quot;,&quot;X&quot;,&quot;x&quot;,&quot;×&quot;}]" Version="V5" />
-            <uix:NInjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="NInjectJsScript_2" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" ScriptCode="function(element, input) { function isVisible(el) { var s = window.getComputedStyle(el); var r = el.getBoundingClientRect(); return s.display !== 'none' &amp;&amp; s.visibility !== 'hidden' &amp;&amp; parseFloat(s.opacity || '1') &gt; 0 &amp;&amp; r.width &gt; 20 &amp;&amp; r.height &gt; 20; } function getText(el) { return ((el.innerText || el.value || el.getAttribute('aria-label') || el.getAttribute('title') || '') + '').trim().toLowerCase(); } var popupSelectors = ['[role=&quot;dialog&quot;]','[aria-modal=&quot;true&quot;]','[class*=&quot;modal&quot; i]','[class*=&quot;popup&quot; i]','[class*=&quot;overlay&quot; i]','[class*=&quot;dialog&quot; i]','[class*=&quot;toast&quot; i]','[class*=&quot;cookie&quot; i]','[class*=&quot;banner&quot; i]','[id*=&quot;modal&quot; i]','[id*=&quot;popup&quot; i]','[id*=&quot;overlay&quot; i]']; var closeWords = ['close','ok','cancel','x','×','đóng','got it','no thanks','not now','accept','agree']; var popups = []; for (var ps = 0; ps &lt; popupSelectors.length; ps++) { try { document.querySelectorAll(popupSelectors[ps]).forEach(function(el) { if (isVisible(el) &amp;&amp; popups.indexOf(el) === -1) popups.push(el); }); } catch(e) {} } var all = Array.prototype.slice.call(document.querySelectorAll('body *')); for (var k = 0; k &lt; all.length; k++) { var el = all[k]; if (!isVisible(el)) continue; var st = window.getComputedStyle(el); var zi = parseInt(st.zIndex, 10); var r = el.getBoundingClientRect(); var fixed = st.position === 'fixed' || st.position === 'sticky'; var big = r.width &gt; window.innerWidth * 0.25 &amp;&amp; r.height &gt; window.innerHeight * 0.12; if (fixed &amp;&amp; (zi &gt;= 100 || big) &amp;&amp; popups.indexOf(el) === -1) popups.push(el); } if (popups.length === 0) return 'NONE'; popups.sort(function(a,b) { return (parseInt(window.getComputedStyle(b).zIndex,10) || 0) - (parseInt(window.getComputedStyle(a).zIndex,10) || 0); }); for (var p = 0; p &lt; popups.length; p++) { var buttons = popups[p].querySelectorAll('button,a,[role=&quot;button&quot;],input[type=&quot;button&quot;],input[type=&quot;submit&quot;]'); for (var i = 0; i &lt; buttons.length; i++) { var t = getText(buttons[i]); for (var j = 0; j &lt; closeWords.length; j++) { if (t === closeWords[j] || t.indexOf(closeWords[j]) &gt;= 0) { buttons[i].click(); return 'FOUND_AND_CLICKED|' + t; } } } } document.dispatchEvent(new KeyboardEvent('keydown', {key:'Escape', code:'Escape', keyCode:27, which:27, bubbles:true})); window.dispatchEvent(new KeyboardEvent('keydown', {key:'Escape', code:'Escape', keyCode:27, which:27, bubbles:true})); return 'FOUND_BUT_NO_BUTTON|' + (popups[0].id || popups[0].className || popups[0].tagName); }" Version="V5" />
-            <If Condition="[uiPopupResult IsNot Nothing AndAlso uiPopupResult.StartsWith(&quot;FOUND_BUT_NO_BUTTON&quot;)]" sap:VirtualizedContainerService.HintSize="452,528" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[endTime]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[New DateTime(Now.Ticks).AddSeconds(30)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="488,1096" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,974" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Timeout="3000" Version="V5" />
+                  <uix:NClosePopup PopupException="{x:Null}" PopupHandled="{x:Null}" DisplayName="Close Popup" sap:VirtualizedContainerService.HintSize="452,191" sap2010:WorkflowViewState.IdRef="NClosePopup_3" PopupAppearTimeout="3" PreferredButtons="[New String(){&quot;Close&quot;,&quot;Cancel&quot;,&quot;Ok&quot;,&quot;OK&quot;,&quot;X&quot;,&quot;x&quot;,&quot;×&quot;}]" Version="V5" />
+                  <uix:NInjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="NInjectJsScript_2" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" ScriptCode="function(element, input) { function isVisible(el) { var s = window.getComputedStyle(el); var r = el.getBoundingClientRect(); return s.display !== 'none' &amp;&amp; s.visibility !== 'hidden' &amp;&amp; parseFloat(s.opacity || '1') &gt; 0 &amp;&amp; r.width &gt; 20 &amp;&amp; r.height &gt; 20; } function getText(el) { return ((el.innerText || el.value || el.getAttribute('aria-label') || el.getAttribute('title') || '') + '').trim().toLowerCase(); } var popupSelectors = ['[role=&quot;dialog&quot;]','[aria-modal=&quot;true&quot;]','[class*=&quot;modal&quot; i]','[class*=&quot;popup&quot; i]','[class*=&quot;overlay&quot; i]','[class*=&quot;dialog&quot; i]','[class*=&quot;toast&quot; i]','[class*=&quot;cookie&quot; i]','[class*=&quot;banner&quot; i]','[id*=&quot;modal&quot; i]','[id*=&quot;popup&quot; i]','[id*=&quot;overlay&quot; i]']; var closeWords = ['close','ok','cancel','x','×','đóng','got it','no thanks','not now','accept','agree']; var popups = []; for (var ps = 0; ps &lt; popupSelectors.length; ps++) { try { document.querySelectorAll(popupSelectors[ps]).forEach(function(el) { if (isVisible(el) &amp;&amp; popups.indexOf(el) === -1) popups.push(el); }); } catch(e) {} } var all = Array.prototype.slice.call(document.querySelectorAll('body *')); for (var k = 0; k &lt; all.length; k++) { var el = all[k]; if (!isVisible(el)) continue; var st = window.getComputedStyle(el); var zi = parseInt(st.zIndex, 10); var r = el.getBoundingClientRect(); var fixed = st.position === 'fixed' || st.position === 'sticky'; var big = r.width &gt; window.innerWidth * 0.25 &amp;&amp; r.height &gt; window.innerHeight * 0.12; if (fixed &amp;&amp; (zi &gt;= 100 || big) &amp;&amp; popups.indexOf(el) === -1) popups.push(el); } if (popups.length === 0) return 'NONE'; popups.sort(function(a,b) { return (parseInt(window.getComputedStyle(b).zIndex,10) || 0) - (parseInt(window.getComputedStyle(a).zIndex,10) || 0); }); for (var p = 0; p &lt; popups.length; p++) { var buttons = popups[p].querySelectorAll('button,a,[role=&quot;button&quot;],input[type=&quot;button&quot;],input[type=&quot;submit&quot;]'); for (var i = 0; i &lt; buttons.length; i++) { var t = getText(buttons[i]); for (var j = 0; j &lt; closeWords.length; j++) { if (t === closeWords[j] || t.indexOf(closeWords[j]) &gt;= 0) { buttons[i].click(); return 'FOUND_AND_CLICKED|' + t; } } } } document.dispatchEvent(new KeyboardEvent('keydown', {key:'Escape', code:'Escape', keyCode:27, which:27, bubbles:true})); window.dispatchEvent(new KeyboardEvent('keydown', {key:'Escape', code:'Escape', keyCode:27, which:27, bubbles:true})); return 'FOUND_BUT_NO_BUTTON|' + (popups[0].id || popups[0].className || popups[0].tagName); }" Version="V5" />
+                  <If Condition="[uiPopupResult IsNot Nothing AndAlso uiPopupResult.StartsWith(&quot;FOUND_BUT_NO_BUTTON&quot;)]" sap:VirtualizedContainerService.HintSize="452,528" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="96565a7d-e7b4-4504-9b1a-449232dcc267" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Timeout="3000" Version="V5" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
                 </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
+              </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Now &lt; endTime" />
+              </ui:InterruptibleWhile.Condition>
+            </ui:InterruptibleWhile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
